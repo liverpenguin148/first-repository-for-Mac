@@ -24,3 +24,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+[core]
+  excludesfile = /Users/takahiro/Desktop/sample/.gitignore_global
