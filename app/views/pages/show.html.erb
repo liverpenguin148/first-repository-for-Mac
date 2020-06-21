@@ -1,7 +1,6 @@
 <h1>ようこそ！管理したいタスクを追加してください</h1>
 <% if user_signed_in? %>
   <section class = "tasks_form">
+    <%= render 'shared/task_form' %>
   </section>
-<% else %>
-
 <% end %>
