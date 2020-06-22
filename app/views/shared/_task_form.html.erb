@@ -1,0 +1,11 @@
+<%= form_with(model: @task, remote: true) do |f| %>
+  <%= f.label :商品名 %>
+  <%= f.text_field :content, placeholder: "タスク名を記載してください。",class: 'form-control' %>
+
+  <%= f.date_select :start_expected_date, {}, class: 'form-control' %>
+
+  <label class="control-label" for="">商品公開予定日時</label>
+  <%= f.date_select :published_at, {}, class: 'form-control' %>
+
+  <%= f.submit '登録', class: 'btn btn-primary' %>
+<% end %>
