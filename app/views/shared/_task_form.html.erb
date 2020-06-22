@@ -2,7 +2,10 @@
   <%= f.label :商品名 %>
   <%= f.text_field :content, placeholder: "タスク名を記載してください。",class: 'form-control' %>
 
+  <% f.label :開始予定日 %>
   <%= f.date_select :start_expected_date, {}, class: 'form-control' %>
+  <% f.label :終了予定日 %>
+  <%= f.date_select :finish_expected_date, {}, class: 'form-control' %>
 
   <label class="control-label" for="">商品公開予定日時</label>
   <%= f.date_select :published_at, {}, class: 'form-control' %>

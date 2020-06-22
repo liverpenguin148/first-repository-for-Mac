@@ -1,7 +1,7 @@
 class CreateTasks < ActiveRecord::Migration[5.2]
   def change
     create_table :tasks do |t|
-      t.boolean :finished
+      t.boolean :finished, default: false, null: false
       t.text :content
       t.references :user, foreign_key: true
       t.datetime :start_expected_date
