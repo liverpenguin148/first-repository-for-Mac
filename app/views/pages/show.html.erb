@@ -1,6 +1,15 @@
 <h1>ようこそ！管理したいタスクを追加してください</h1>
 <% if user_signed_in? %>
-  <section class = "tasks_form">
-    <%= render 'shared/task_form' %>
-  </section>
+<section class="tasks_form">
+  <%= render 'shared/task_form' %>
+</section>
 <% end %>
+
+<h2>タスク一覧</h2>
+<section class="tasks">
+  <ul id="tasklist">
+    <% @tasks.each do |task| %>
+    <li><%= task.content %></li>
+    <% end %>
+  </ul>
+</section>

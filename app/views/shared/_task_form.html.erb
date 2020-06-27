@@ -1,12 +1,12 @@
-<%= form_with(model: @task, local: true) do |f| %>
-  <%= f.label :商品名 %>
-  <%= f.text_field :content, placeholder: "タスク名を記載してください。",class: 'form-control' %>
+<%= form_with(model: @task, remote: true) do |f| %>
+<%= f.label :商品名 %>
+<%= f.text_field :content, placeholder: "タスク名を記載してください。",class: 'form-control' %>
 
-  <%= f.label :開始予定日 %>
-  <%= f.date_field :start_expected_date, class: 'form-control' %>
+<%= f.label :開始予定日 %>
+<%= f.date_field :start_expected_date, class: 'form-control' %>
 
-  <%= f.label :終了予定日 %>
-  <%= f.date_field :finish_expected_date, class: 'form-control' %>
+<%= f.label :終了予定日 %>
+<%= f.date_field :finish_expected_date, class: 'form-control' %>
 
-  <%= f.submit '登録', class: 'btn btn-primary' %>
+<%= f.submit '登録', class: 'btn btn-primary' %>
 <% end %>

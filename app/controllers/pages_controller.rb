@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
 
   def show
-    debugger
     @task = current_user.tasks.build if signed_in?
+    @tasks = current_user.tasks.order(start_expected_date: :desc)
   end
 end

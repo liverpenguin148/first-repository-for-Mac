@@ -19,7 +19,7 @@ class Task < ApplicationRecord
   validates :user_id, presence: true
   validates :content, presence: true
   validates :content, length: { maximum: 30 }
-  validates :tart_expected_date, presence: true
+  validates :start_expected_date, presence: true
   validates :finish_expected_date, presence: true
 
   # 開始予定日が、終了予定日より早い日付の場合、trueを返す

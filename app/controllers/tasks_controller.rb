@@ -2,8 +2,12 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.build(task_param)
     if @task.save
-      redirect_to @user
+      respond_to do |format|
+        format.html { redirect_to pages_show_url }
+        format.js
+      end
     else
+      render 'pages/show'
     end
   end
 
