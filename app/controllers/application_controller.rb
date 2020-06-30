@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   private
   # ユーザーがログインしていない場合、ログインページへ遷移
     def sign_in_required
-      redirect_to new_user_session_url unless uesr_signed_in?
+      redirect_to new_user_session_url unless user_signed_in?
     end
 
   protected

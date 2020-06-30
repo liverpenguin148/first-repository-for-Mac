@@ -19,7 +19,7 @@ gem "uglifier", ">= 1.3.0"
 # Use gem devise
 gem "devise"
 gem "omniauth-twitter"
-# Use CoffeeScript for .coffee assets and views
+# Use CoffeeScript for .coffee assets anjd views
 gem "coffee-rails", "~> 4.2"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem "turbolinks", "~> 5"
@@ -35,6 +35,10 @@ gem "jbuilder", "~> 2.5"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# bootstrap
+gem "bootstrap", "~> 4.4.1"
+gem "jquery-rails"
 
 # RubyのDebug
 gem "ruby-debug-ide"

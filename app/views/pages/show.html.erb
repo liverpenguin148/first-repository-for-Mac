@@ -6,10 +6,6 @@
 <% end %>
 
 <h2>タスク一覧</h2>
-<section class="tasks">
-  <ul id="tasklist">
-    <% @tasks.each do |task| %>
-    <li><%= task.content %></li>
-    <% end %>
-  </ul>
+<section class="tasklist">
+  <%= render "tasks/task", tasks: @tasks %>
 </section>

@@ -1,6 +1,9 @@
 class TasksController < ApplicationController
   def create
     @task = current_user.tasks.build(task_param)
+    # 表示したいレコードを取得する
+    @tasks = current_user.tasks.all
+
     if @task.save
       respond_to do |format|
         format.html { redirect_to pages_show_url }
