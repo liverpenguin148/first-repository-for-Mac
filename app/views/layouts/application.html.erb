@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>DeviseRails5</title>
-    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>DeviseRails5</title>
+  <%= csrf_meta_tags %>
 
-   <body>
-      <header>
-        <nav>
-            <!-- user_signed_in? でログイン済みかどうかチェック & ログインしているかどうかでページのレイアウトを変更-->
-            <% if user_signed_in? %>
-            <strong><%= link_to current_user.username, pages_show_path %></strong>
-            <%= link_to 'プロフィール変更', edit_user_registration_path %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <%= link_to 'TodoList', root_url, class: "navbar-brand" %>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <!-- user_signed_in? でログイン済みかどうかチェック & ログインしているかどうかでページのレイアウトを変更-->
+        <% if user_signed_in? %>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to 'Home', root_url, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to current_user.username, pages_show_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'プロフィール変更', edit_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        </ul>
         <% else %>
-            <%= link_to 'サインアップ', new_user_registration_path %>
-            <%= link_to 'ログイン', new_user_session_path %>
-            <% end %>
-        </nav>
-      </header>
+        <li class="nav-item">
+          <%= link_to 'サインアップ', new_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'ログイン', new_user_session_path, class: "nav-link" %>
+        </li>
+        <% end %>
+      </div>
+    </nav>
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1 ">
+      </span>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    </nav>
+  </header>
 
-       <%= yield %>
-  </body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
+</body>
+
 </html>
