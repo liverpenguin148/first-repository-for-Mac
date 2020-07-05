@@ -1,5 +1,30 @@
 <% tasks.each do |task| %>
-<div class=card>
-  <%= task.content %>
+<% if task.finished == "未着手" %>
+<div class="task_todo">
+  <h4>ToDo</h4>
+  <%
+=begin%>
+  <%= render "tasks/task_todo", task: task %>
+  <%
+=end%>
 </div>
+<% elsif task.finished == "対応中" %>
+<div class="task_doing">
+  <h4>Doing</h4>
+  <%
+=begin%>
+  <%= render "tasks/task_doing", task: task %>
+  <%
+=end%>
+</div>
+<% else %>
+<div class="task_done">
+  <h4>Done</h4>
+  <%
+=begin%>
+  <%= render "tasks/task_done", task: task %>
+  <%
+=end%>
+</div>
+<% end %>
 <% end %>

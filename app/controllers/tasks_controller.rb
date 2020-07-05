@@ -14,6 +14,19 @@ class TasksController < ApplicationController
     end
   end
 
+  def update
+    @task_todo = current_user.tasks.find_by(id: params[:task_id], user_id: current_user.id)
+    @task_todo.update_attribute(:finished,"対応中")
+
+    @task_doing = current_user.find_by(id: params[:task_id], user_id: current_user.id)
+    @task_doing.update_attribute(:finished,"完了")
+  end
+
+  def destroy
+    @task_done = current_user.tasks.find(params[:task_id])
+    @task_done.destroy
+  end
+
   private
 
     def task_param

@@ -5,6 +5,7 @@ class Task < ApplicationRecord
 # +-------------------------+------------+------+-----+---------+----------------+
 # | id                      | bigint(20) | NO   | PRI | NULL    | auto_increment |
 # | finished                | tinyint(1) | YES  |     | NULL    |                |
+# | 未着手、対応中 完了                                                             |
 # | content                 | text       | YES  |     | NULL    |                |
 # | user_id                 | bigint(20) | YES  | MUL | NULL    |                |
 # | start_expected_date     | datetime   | YES  |     | NULL    |                |

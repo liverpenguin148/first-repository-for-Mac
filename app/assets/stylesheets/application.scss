@@ -1,1 +1,39 @@
 @import "bootstrap";
+
+// タスク一覧の編集
+.tasklist {
+  .task_todo {}
+
+  .task_doing {
+    float: left;
+  }
+
+  .task_done {
+    float: right;
+  }
+
+  .card {
+    margin-top: 60px;
+    width: 60%;
+    padding: 10px;
+    margin-left: 20px;
+
+    .taskname {
+      display: inline-block;
+    }
+
+    .status {
+      display: inline-block;
+      text-align: right;
+    }
+  }
+
+}
+
+// タスク一覧のヘッダー部
+h4.tasks {
+  margin-top: 20px;
+  text-align: center;
+  border-bottom: solid 2px;
+  border-bottom-color: lightblue;
+}
