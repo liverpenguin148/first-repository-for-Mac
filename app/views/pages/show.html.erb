@@ -6,12 +6,5 @@
 
 <h4 class="tasks">タスク一覧</h4>
 <section class="tasklist">
-  <%
-=begin%>
-  <%= render "tasks/task_todo", tasks: @task_todo %>
-  <%= render "tasks/task_doing", tasks: @task_doing %>
-  <%= render "tasks/task_done", tasks: @task_done %>
-  <%
-=end%>
-  <%= render "tasks/task", tasks: @tasks>
+  <%= render 'tasks/task'%>
 </section>

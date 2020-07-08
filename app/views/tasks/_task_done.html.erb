@@ -1,13 +1,15 @@
-<% if task.any? %>
-<aside class="card col-md-4">
+<% unless tasks.nil? %>
+<% tasks.each do |task| %>
+<div class="card border-danger">
   <div class="taskname">
     <%= task.content %>
   </div>
-  <%= form_with(model: @task_done, local: true) do |f| %>
-  <div><%= hidden_field_tag :task_id, task.id %></div>
+  <%= form_with(model: task, remote: true) do |f| %>
   <%= link_to "削除", task, method: :delete,
                              data: {confirm: "削除します。よろしいですか?"},
-                             class: "btn btn-danger" %>
+                             class: "btn btn-danger",
+                             remote: true %>
   <% end %>
-</aside>
+</div>
+<% end %>
 <% end %>

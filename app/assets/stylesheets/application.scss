@@ -2,19 +2,30 @@
 
 // タスク一覧の編集
 .tasklist {
-  .task_todo {}
+  .task_todo {
+    float: left;
+  }
 
   .task_doing {
     float: left;
   }
 
   .task_done {
-    float: right;
+    float: left;
   }
 
+  .card todo {
+    background-color: orange;
+  }
+
+  .card doing {
+    background-color: orange;
+  }
+
+  .card done {}
+
   .card {
-    margin-top: 60px;
-    width: 60%;
+    margin-top: 30px;
     padding: 10px;
     margin-left: 20px;
 

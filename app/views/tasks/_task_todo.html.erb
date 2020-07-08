@@ -1,13 +1,13 @@
-<% if tasks.any? %>
-<aside class="card col-md-4">
-  <div class="status">
-    <div class="taskname">
-      <%= task.content %>
-    </div>
-    <%= form_with(model: @task_todo, local: true) do |f| %>
-    <div><%= hidden_field_tag :task_id, task.id %></div>
-    <%= f.submit '着手', class: 'btn btn-outline-primary' %>
-    <% end %>
+<% unless tasks.nil? %>
+<% tasks.each do |task| %>
+<div class="card border-primary">
+  <div class="taskname">
+    <%= task.content %>
   </div>
-</aside>
+  <%= form_with(model: task, remote: true) do |f| %>
+  <div><%= hidden_field_tag :status, task.finished %></div>
+  <%= f.submit '着手', class: 'btn btn-outline-primary' %>
+  <% end %>
+</div>
+<% end %>
 <% end %>
