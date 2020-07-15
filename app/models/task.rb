@@ -18,13 +18,12 @@ class Task < ApplicationRecord
 
   belongs_to :user
   validates :user_id, presence: true
-  validates :content, presence: true
-  validates :content, length: { maximum: 30 }
-  validates :start_expected_date, presence: true
-  validates :finish_expected_date, presence: true
+  validates :content, presence: true, length: { maximum: 30 }
 
   # 開始予定日が、終了予定日より早い日付の場合、trueを返す
   def input_valid_expected_date?
-    start_expected_date < finish_expected_date
+    if start_expected_date.any?
+      start_expected_date < finish_expected_date
+    end
   end
 end

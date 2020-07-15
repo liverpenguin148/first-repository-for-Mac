@@ -1,0 +1,6 @@
+//フォームに入力された値を消去
+//$("input").val("");
+// 追加されたタスクを表示
+//$(".tasklist").html("<%= escape_javascript( render('tasks/task')) %>");
+// エラーメッセージを表示
+$("#error_explanation").html("<%= escape_javascript(render 'shared/error_messages', { resource: @task }) %>")

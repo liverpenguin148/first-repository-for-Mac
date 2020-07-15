@@ -1,5 +1,37 @@
 @import "bootstrap";
 
+// エラーメッセージ
+#error_explanation {
+  background-color: lightpink;
+  color: red;
+}
+
+// タスクを追加するボタン
+.addtask {
+  margin-left: 40px;
+}
+
+// フォームモーダルの変更
+.modal-dialog {
+  max-width: inherit;
+  width: 40%;
+
+  .modal-body {
+    max-width: inherit;
+    width: 90%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .modal-footer {
+    margin: auto;
+    border-top: inherit;
+    border-top: none;
+  }
+
+}
+
 // タスク一覧の編集
 .tasklist {
   .task_todo {
@@ -13,16 +45,6 @@
   .task_done {
     float: left;
   }
-
-  .card todo {
-    background-color: orange;
-  }
-
-  .card doing {
-    background-color: orange;
-  }
-
-  .card done {}
 
   .card {
     margin-top: 30px;
