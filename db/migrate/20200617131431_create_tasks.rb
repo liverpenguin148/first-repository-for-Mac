@@ -8,7 +8,6 @@ class CreateTasks < ActiveRecord::Migration[5.2]
       t.datetime :finish_expected_date
       t.datetime :start_achievement_date
       t.datetime :finish_achievement_date
-
       t.timestamps
     end
   end
