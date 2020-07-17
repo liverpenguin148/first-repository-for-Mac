@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>DeviseRails5</title>
-        <%= csrf_meta_tags %>
 
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    </head>
+<head>
+  <title>TodoList</title>
+  <%= csrf_meta_tags %>
 
-    <body>
-        <header>
-            <nav>
-                <!-- user_signed_in? でログイン済みかどうかチェック & ログインしているかどうかでページのレイアウトを変更-->
-                <% if user_signed_in? %>
-                <strong><%= link_to current_user.username, pages_show_path %></strong>
-                <%= link_to 'プロフィール変更', edit_user_registration_path %>
-                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-            <% else %>
-                <%= link_to 'サインアップ', new_user_registration_path %>
-                <%= link_to 'ログイン', new_user_session_path %>
-                <% end %>
-            </nav>
-        </header>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <%= link_to 'TodoList', root_url, class: "navbar-brand text-white" %>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <!-- user_signed_in? でログイン済みかどうかチェック & ログインしているかどうかでページのレイアウトを変更-->
+        <% if user_signed_in? %>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to 'Home', root_url, class: "nav-link text-white text-white" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to current_user.username, pages_show_path, class: "nav-link text-white" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'プロフィール変更', edit_user_registration_path, class: "nav-link text-white" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link text-white" %>
+          </li>
+        </ul>
+        <% else %>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to 'サインアップ', new_user_registration_path, class: "nav-link text-white" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'ログイン', new_user_session_path, class: "nav-link text-white" %>
+          </li>
+        </ul>
+        <% end %>
+      </div>
+    </nav>
+  </header>
 
-        <%= yield %>
-    </body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
+</body>
+
 </html>

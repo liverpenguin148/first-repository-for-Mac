@@ -1,0 +1,2 @@
+// 追加されたタスクを表示
+$(".tasklist").html("<%= escape_javascript( render('tasks/task', tasks: @tasks)) %>");

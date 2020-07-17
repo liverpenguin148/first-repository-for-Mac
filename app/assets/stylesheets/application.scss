@@ -1,0 +1,72 @@
+@import "bootstrap";
+
+// エラーメッセージ
+#error_explanation {
+  background-color: lightpink;
+  color: red;
+}
+
+// タスクを追加するボタン
+.addtask {
+  margin-left: 40px;
+}
+
+// フォームモーダルの変更
+.modal-dialog {
+  max-width: inherit;
+  width: 40%;
+
+  .modal-body {
+    max-width: inherit;
+    width: 90%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .modal-footer {
+    margin: auto;
+    border-top: inherit;
+    border-top: none;
+  }
+
+}
+
+// タスク一覧の編集
+.tasklist {
+  .task_todo {
+    float: left;
+  }
+
+  .task_doing {
+    float: left;
+  }
+
+  .task_done {
+    float: left;
+  }
+
+  .card {
+    margin-top: 30px;
+    padding: 10px;
+    margin-left: 20px;
+
+    .taskname {
+      display: inline-block;
+    }
+
+    .status {
+      display: inline-block;
+      text-align: right;
+    }
+  }
+
+}
+
+// タスク一覧のヘッダー部
+h4.tasks {
+  margin-top: 20px;
+  text-align: center;
+  border-bottom: solid 2px;
+  border-bottom-color: lightblue;
+}

@@ -1,0 +1,15 @@
+<% unless tasks.nil? %>
+<% tasks.each do |task| %>
+<div class="card border-danger">
+  <div class="taskname">
+    <%= task.content %>
+  </div>
+  <%= form_with(model: task, remote: true) do |f| %>
+  <%= link_to "削除", task, method: :delete,
+                             data: {confirm: "削除します。よろしいですか?"},
+                             class: "btn btn-danger",
+                             remote: true %>
+  <% end %>
+</div>
+<% end %>
+<% end %>
